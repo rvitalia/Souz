@@ -56,6 +56,10 @@ a {
   }
   .p80{
     padding-top: 80px;
+
+    @include mobile{
+      padding-top: 50px;
+    }
   }
 
   .p70{

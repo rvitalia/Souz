@@ -16,18 +16,42 @@
     align-items: center;
     column-gap: 35px;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     & h2 {
         color: #000;
         font-size: 40px;
         font-weight: 600;
+
+        @include mobile {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+
+    & img {
+        @include tablet {
+            display: none;
+        }
+
+        @include mobile {
+            display: block;
+        }
     }
 }
 
 .review__inner {
     display: grid;
     grid-template-columns: 745px auto;
-    column-gap: 100px;
+    // column-gap: 100px;
     align-items: center;
+
+    @include tablet {
+        grid-template-columns: 100%;
+        gap: 50px;
+    }
 }
 
 .revieew__inner__left {}
@@ -36,21 +60,77 @@
 .swiper-review {
     background: #FFF;
     filter: drop-shadow(0px 15px 100px rgba(15, 23, 0, 0.10));
+    border-radius: 20px;
+
+    @include tablet {
+        margin-right: -45px;
+        margin-left: -45px;
+    }
+
+    @include mobile {
+        margin-right: -25px;
+        margin-left: -25px;
+    }
+
+    & .swiper-pagination {
+        display: none;
+        width: 100%;
+
+        @include burger-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            column-gap: 10px;
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            right: 25px;
+            z-index: 10;
+            max-width: calc(100% - 60px);
+            max-height: 10px;
+        }
+
+        & .swiper-pagination-bullet {
+            width: 100%;
+            border-radius: 20px;
+            background: black;
+        }
+
+        & .swiper-pagination-bullet-active {
+            border-radius: 20px;
+            background: #F00;
+        }
+    }
 }
 
 
 .swiper-review-slide {
-    padding: 50px;
+    padding: 45px 50px 50px;
+
+    @include tablet {
+        padding-right: 45px;
+    }
+
+    @include burger-header {
+        padding: 70px 25px 42px;
+    }
 
     & p {
         line-height: 150%;
         padding-bottom: 15px;
+
+        @include burger-header {
+            text-align: center;
+        }
     }
 
     & a {
         display: block;
         color: #F00;
         margin-bottom: 20px;
+
+        @include burger-header {
+            text-align: center;
+        }
     }
 
     & span {
@@ -59,6 +139,11 @@
         color: #7689A4;
         font-size: 16px;
         line-height: 150%;
+
+        @include burger-header {
+            text-align: center;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -77,12 +162,60 @@
     display: flex;
     flex-direction: column;
     row-gap: 60px;
+    padding-left: 100px;
+    position: relative;
+
+    &::after {
+        content: '';
+        height: 1px;
+        width: 100%;
+        background: #E2EAF2;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+
+        @include tablet {
+            height: 100%;
+            width: 1px;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+        }
+
+        @include small-mobile {
+            height: 1px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    @include tablet {
+        flex-direction: row;
+        column-gap: 100px;
+        align-items: flex-end;
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    @include small-mobile {
+        flex-direction: column;
+        row-gap: 100px;
+        align-items: center;
+    }
 }
 
 .review__inner__right__item {
     display: flex;
     align-items: center;
     column-gap: 60px;
+
+    @include tablet {
+        flex-direction: column;
+        row-gap: 20px;
+    }
 }
 
 
@@ -103,14 +236,14 @@
     align-items: center;
     padding-bottom: 80px;
     column-gap: 30px;
-    overflow: hidden;
+    overflow: auto;
 
-    & li{
+    & li {
         display: flex;
         min-width: 278px;
     }
 
-    & img{
+    & img {
         display: block;
         flex-shrink: 0;
     }
