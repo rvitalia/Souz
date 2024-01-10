@@ -1,0 +1,121 @@
+.service * {
+    font-family: var(--font-family);
+    color: var(--accent-color);
+    font-weight: 400;
+    line-height: normal;
+    font-size: 14px;
+    font-style: normal;
+}
+.service.p80{
+    @include mobile{
+        padding-top: 50px;
+    }
+}
+
+.service__inner {
+    padding-bottom: 80px;
+}
+
+.service__inner__title {
+    color: #19355C;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 88.889%;
+    padding-bottom: 80px;
+
+    @include mobile{
+        padding-bottom: 50px;
+    }
+}
+
+.service__inner__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    
+    @include tablet{
+        column-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        row-gap: 30px;
+    }
+    
+    @include mobile{
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+
+    }
+}
+
+.service__inner__list__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;    
+
+    @include mobile{
+        row-gap: 15px;
+    }
+}
+
+.service__inner__list__item__custom {
+    margin-bottom: 17px;
+}
+.service__inner__list-big {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 30px;
+    align-items: center;
+
+    @include mobile{
+        grid-template-columns: none;
+        grid-template-rows: 24px 1fr;
+        row-gap: 15px;
+    }
+
+    & img {
+        grid-row: 1;
+
+        @include mobile{
+            max-width: 24px;
+        }
+    }
+
+    & strong {
+        color: #000;
+        font-size: 23px;
+        font-weight: 600;
+        padding-bottom: 5px;
+    }
+
+    & p {
+        color: #7689A4;
+        max-width: 464px;
+    }
+}
+
+.service__inner__list-small {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    & span {
+        display: block;
+        color: #000;
+        font-size: 23px;
+        font-weight: 600;
+        position: relative;
+        padding-left: 94px;
+    }
+
+    & span::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 40px;
+        background: #1FBA2E;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 22.5px;
+        z-index: 1;
+    }
+}

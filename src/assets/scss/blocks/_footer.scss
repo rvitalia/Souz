@@ -1,0 +1,145 @@
+.footer * {
+    font-family: var(--font-family);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+}
+
+.footer {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+
+    & form{
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        padding-bottom: 80px;
+    }
+}
+
+.footer__title {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.footer__desc {
+
+}
+
+.footer__inner {
+    display: flex;
+    column-gap: 40px;
+    padding: 23px 0;
+}
+
+.footer__inner__items {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    &:last-child{
+        .footer__inner__items__link{
+            font-weight: 400;
+        }
+    }
+}
+
+.footer__inner__items__link {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.footer__line {
+    padding-top: 50px;
+
+    &+.footer__title {
+        margin-top: -20px;
+    }
+}
+
+.footer__input {
+    border-radius: 10px;
+    border: 1px solid #E2EAF2;
+    background: #FFF;
+    padding: 22.5px 32px;
+    width: 100%;
+    max-width: 480px;
+
+    &::placeholder {
+        color: #A1ACC3;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &:focus, &:active{
+        outline: none;
+    }
+}
+
+.footer__submit {
+    padding: 22.5px 32px;
+    width: 100%;
+    max-width: 340px;
+}
+
+.footer__warwemark{
+    position: absolute;
+    right: 10px;
+    top: 200px;
+    z-index: 0;
+    transform: translateY(-100%);
+}
+
+.subfooter *{
+    font-family: var(--font-family);
+}
+
+.subfooter__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subfooter__inner__logo {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto 1fr;
+    padding: 35px 0;
+    align-items: center;
+
+    & img{
+        grid-row: 1/4;
+        margin: 0;
+    }
+
+    & span{
+        width: 100%;
+        max-width: none;
+
+        & + span{
+            padding-top: 6px;
+        }
+    }
+}
+
+.subfooter__inner__social {
+    & li a{
+        font-family: var(--font-family);
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        color: #19355C;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    & li:first-child a{
+        padding-left: 45px;
+    }
+}

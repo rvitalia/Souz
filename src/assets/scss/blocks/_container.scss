@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include for-desktop{
+        padding: 0px 60px;
+    }
+
+    @include mobile{
+        padding: 0 30px;
+    }
+}
+.container__fluid{
+    width: 100%;
+    max-width: var(--container-fluid-width);
+    margin: 0 auto;
+}
+

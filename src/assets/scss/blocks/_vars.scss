@@ -1,0 +1,17 @@
+
+ :root {
+    // base
+    --font-family: "PFBeauSansPro", sans-serif;
+    --content-width: 1320px;
+    --content-fluid-width: 1430px;
+    --container-offset: 15px;
+    --container-fluid-offset: 5px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+    --container-fluid-width: calc(var(--content-fluid-width) + (var(--container-fluid-offset) * 2));
+  
+    // colors
+    --light-color: #fff;
+    --accent-color: #19355C;
+    --hover-color: #F00E0E;
+  
+  }

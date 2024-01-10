@@ -1,0 +1,128 @@
+.header * {
+    font-family: var(--font-family);
+    color: var(--accent-color);
+    font-weight: 600;
+    line-height: normal;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.header__inner {}
+
+.header__inner__logo {
+    column-gap: 20px;
+
+    & img {
+        margin: 20px 0;
+    }
+
+    & span {
+        display: block;
+        max-width: 96px;
+        font-size: 14px;
+        color: #586B86;
+    }
+}
+
+.header__nav {
+    margin-left: auto;
+    column-gap: 50px;
+
+    @include small-tablet{
+        column-gap: 15px;
+    }
+}
+
+.header__nav__inner {
+    column-gap: 50px;
+
+    & li:not(:last-child){
+        @include for-desktop{
+            display: none;
+        }
+    }
+
+
+    & li:last-child a {
+        padding-left: 40px;
+
+        &:after {
+            left: 40px;
+        }
+    }
+
+    & li:last-child a {
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+    }
+    & li:last-child {
+        @media (max-width: 720px){
+            display: none;
+        }
+    }
+
+    & a {
+        position: relative;
+        transition: all 0.3s linear;
+        padding-bottom: 4px;
+    }
+
+    & a:after {
+        content: "";
+        width: 0;
+        height: 4px;
+        background-color: var(--hover-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        transition: all 0.3s linear;
+    }
+
+    & a:hover {
+        color: var(--hover-color);
+    }
+
+    & a:hover::after {
+        width: 20px;
+    }
+}
+
+.header__nav__social {
+    column-gap: 15px;
+
+    & li {
+        position: relative;
+    }
+
+    & li a::after {
+        content: "";
+        width: 0;
+        height: 4px;
+        background-color: var(--hover-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        transition: all 0.3s linear;
+
+    }
+
+    & li a:hover::after {
+        width: 20px;
+    }
+
+    @include mobile{
+        display: none;
+    }
+}
+.button__burger{
+    display: none;
+
+    @include for-desktop{
+        display: block;
+        margin: 0;
+        background: transparent;
+        border: none;
+    }
+}

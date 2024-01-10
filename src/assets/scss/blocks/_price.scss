@@ -1,0 +1,116 @@
+.price * {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-family: var(--font-family);
+    line-height: normal;
+}
+
+.price {
+    margin: 0px 5px;
+    @include bg-cover;
+    border-radius: 8px;
+}
+
+.price__title {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 142%;
+    text-align: left;
+
+    & strong {
+        display: block;
+        font-size: 90px;
+    }
+}
+
+.price__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    padding-bottom: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.price__inner__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    &:last-child .price__inner__item__top__blue__title {
+        margin-bottom: 0;
+        font-size: 25px;
+    }
+
+    &:last-child .price__inner__item__top__list {
+        row-gap: 12px;
+
+        & li {
+            font-size: 16px;
+        }
+    }
+
+    &:nth-child(2) {
+
+        & .price__inner__item__top {
+            background: #FFF;
+        }
+    }
+}
+
+.price__inner__item__top {
+    border-radius: 13px;
+    background: #EFFEFF;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.price__inner__item__top__blue {
+    padding: 18px 20px;
+    border-radius: 10px;
+    background: #19355C;
+}
+
+.price__inner__item__top__blue__text {
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+.price__inner__item__top__blue__title {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 15px;
+    max-width: 356px;
+}
+
+.price__inner__item__top__blue__tariff {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+
+.price__inner__item__top__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 22px;
+
+    & li {
+        color: #19355C;
+    }
+}
+
+.price__inner__item__link {
+    text-align: center;
+    padding: 18px 32px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.--red {
+    background: #F00;
+}
