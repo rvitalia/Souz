@@ -14,11 +14,26 @@
     background-size: cover;
     border-radius: 8px;
 
-    & form{
+    & form .flex{
         display: flex;
         align-items: center;
         column-gap: 10px;
         padding-bottom: 80px;
+
+        @include tablet{
+            flex-direction: column;
+            row-gap: 9px;
+            align-items: flex-start;
+        }
+
+        @include mobile{
+            padding-bottom: 50px;
+        }
+    }
+
+    @include mobile{
+        margin-right: -25px;
+        margin-left: -25px;
     }
 }
 
@@ -29,13 +44,20 @@
 }
 
 .footer__desc {
-
+    @include tablet{
+        font-size: 16px;
+    }
 }
 
 .footer__inner {
     display: flex;
     column-gap: 40px;
     padding: 23px 0;
+
+    @media(max-width: 740px){
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
 }
 
 .footer__inner__items {
@@ -44,8 +66,24 @@
     column-gap: 20px;
 
     &:last-child{
+        & a{
+            @include mobile{
+                font-size: 16px;
+            }
+        }
         .footer__inner__items__link{
             font-weight: 400;
+        }
+
+    }
+
+    @include tablet{
+        column-gap: 12px;
+    }
+
+    & img{
+        @include mobile{
+            display: none;
         }
     }
 }
@@ -53,6 +91,11 @@
 .footer__inner__items__link {
     font-weight: 700;
     font-size: 30px;
+    white-space: nowrap;
+
+    @include tablet{
+        font-size: 28px;
+    }
 }
 
 .footer__line {
@@ -60,6 +103,14 @@
 
     &+.footer__title {
         margin-top: -20px;
+
+        @include tablet{
+            margin-top: 50px;
+        }
+    }
+
+    @include tablet{
+        display: none;
     }
 }
 
@@ -70,6 +121,17 @@
     padding: 22.5px 32px;
     width: 100%;
     max-width: 480px;
+
+    @include tablet{
+        max-width: none;
+    }
+
+    @include mobile{
+        padding-left: 19px;
+        font-size: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
 
     &::placeholder {
         color: #A1ACC3;
@@ -86,6 +148,11 @@
     padding: 22.5px 32px;
     width: 100%;
     max-width: 340px;
+
+    @include mobile{
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
 }
 
 .footer__warwemark{
@@ -94,6 +161,15 @@
     top: 200px;
     z-index: 0;
     transform: translateY(-100%);
+
+    @include tablet{
+        right: unset;
+        left: 50%;
+    }
+
+    @include mobile{
+        display: none;
+    }
 }
 
 .subfooter *{
@@ -104,6 +180,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include tablet{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @include mobile{
+        align-items: center;
+    }
 }
 
 .subfooter__inner__logo {
@@ -116,6 +201,12 @@
     & img{
         grid-row: 1/4;
         margin: 0;
+
+        @include mobile{
+            grid-row: 1 ;
+            margin: 0 auto;
+            margin-bottom: 19px;
+        }
     }
 
     & span{
@@ -124,11 +215,31 @@
 
         & + span{
             padding-top: 6px;
+
+            @include mobile{
+                padding-top: 9px;
+            }
+        }
+    }
+
+    @include mobile{
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+        & *{
+            margin: 0 auto;
+            display: block;
+            text-align: center;
         }
     }
 }
 
 .subfooter__inner__social {
+    @include tablet{
+        width: 100%;
+    }
+
     & li a{
         font-family: var(--font-family);
         background-position: 0 50%;
@@ -141,5 +252,56 @@
 
     & li:first-child a{
         padding-left: 45px;
+    }
+
+    & li:nth-child(2){
+        @include tablet{
+            margin-left: auto;
+        }
+    }
+
+    @include mobile{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 20px;
+        row-gap: 30px;
+
+
+        & li:nth-child(1){
+            grid-column: 7 span;
+            
+            & a{
+                background-image: none !important;
+                padding-left: 0;
+                margin: 0 auto;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        & li:nth-child(2){
+            grid-column: 3;
+            // display: flex;
+            // justify-content: center;
+            max-width: 24px;
+            min-width: 24px;
+            margin: 0 auto;
+        }
+        & li:nth-child(3){
+            grid-column: 4;
+            // display: flex;
+            // justify-content: center;
+            max-width: 24px;
+            min-width: 24px;
+            margin: 0 auto;
+        }
+        & li:nth-child(4){
+            grid-column: 5;
+            // display: flex;
+            // justify-content: center;
+            max-width: 24px;
+            margin: 0 auto;
+            min-width: 24px;
+        }
     }
 }
