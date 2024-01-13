@@ -36,5 +36,42 @@ const swiperReview = new Swiper('.swiper-review', {
         type: 'bullets',
     }
 });
-// let screenwidth = window.innerWidth;
-// console.log(screenwidth);
+
+
+function burger(){
+    const buttonBurger = document.querySelector('[data-burger]');
+    const menuBurger = document.querySelector('[data-menu]');
+    const menuLi = document.querySelectorAll('[data-animation]');
+
+    buttonBurger.addEventListener('click', ()=>{
+        if(menuBurger.classList.contains('active')){
+            menuBurger.classList.remove('active');
+            setTimeout(() => {
+                menuLi.forEach(element => {
+                    element.style.opacity = '0';
+                });
+            }, 300);
+        }
+        else{
+            menuBurger.classList.add('active');
+            setTimeout(() => {
+                menuLi.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 300);
+        }
+    })
+    menuLi.forEach(element => {
+        element.addEventListener('click', ()=>{
+            menuBurger.classList.remove('active');
+            setTimeout(() => {
+                menuLi.forEach(element => {
+                    element.style.opacity = '0';
+                });
+            }, 300);
+        })
+    });
+}
+
+
+burger();

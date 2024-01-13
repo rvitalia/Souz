@@ -1,17 +1,17 @@
 <div class="container__fluid">
     <header class="header">
         <div class="container">
-            <div class="header__inner flex">
+            <div class="header__inner flex mobile__burger" data-menu>
                 <div class="header__inner__logo flex">
                     <img src="./assets/images/svg/logo.svg" alt="logo" width="70" height="56">
                     <span>Комплексное обслуживание зданий</span>
                 </div>
                 <nav class="header__nav flex">
                     <ul class="list-reset header__nav__inner flex">
-                        <li><a href="">Выгода</a></li>
-                        <li><a href="">Кейс</a></li>
-                        <li><a href="">Стоимость</a></li>
-                        <li><a href="">Отзывы </a></li>
+                        <li data-animation><a href="">Выгода</a></li>
+                        <li data-animation><a href="">Кейс</a></li>
+                        <li data-animation><a href="#price">Стоимость</a></li>
+                        <li data-animation><a href="#review">Отзывы </a></li>
                         <li><a href="" style="background-image: url(./assets/images/header/tel.svg);">+7 (812) 243-16-01</a></li>
                     </ul>
                     <ul class="header__nav__social list-reset flex">
@@ -19,8 +19,9 @@
                         <li><a href=""><img src="./assets/images/header/telegram.svg" alt="telegram"></a></li>
                         <li><a href=""><img src="./assets/images/header/mail.svg" alt="mail"></a></li>
                     </ul>
-                    <button class="button__burger">
-                        <img src="./assets/images/svg/burger.svg" alt="burger" width="32" height="22">
+                    <button class="button__burger" data-burger>
+                        <img src="./assets/images/svg/burger.svg" class="burger__icon" alt="burger" width="32" height="22">
+                        <img src="./assets/images/svg/close.svg" class="burger__close" alt="close" width="24" height="24">
                     </button>
                 </nav>
             </div>

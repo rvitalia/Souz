@@ -24,6 +24,7 @@
     }
 
     & strong {
+        font-size: inherit;
 
         @include tablet{
             display: block;

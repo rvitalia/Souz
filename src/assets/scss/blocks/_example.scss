@@ -23,19 +23,19 @@
 .swiper__examples {
     margin: 0px 5px;
 
-    @include mobile{
+    @include mobile {
         margin: 0 5px;
     }
 
     & .container {
         padding-left: 0;
 
-        @include mobile{
+        @include mobile {
             padding-right: 0;
         }
     }
 
-    & .swiper-pagination{
+    & .swiper-pagination {
         display: none;
         width: 100%;
 
@@ -45,7 +45,7 @@
             column-gap: 10px;
         }
 
-        @include mobile{
+        @include mobile {
             position: absolute;
             top: 237px;
             left: 25px;
@@ -81,7 +81,7 @@
     background: #FFF;
     max-width: 630px;
 
-    @include mobile{
+    @include mobile {
         height: 100%;
         margin-top: 5px;
     }
@@ -101,7 +101,7 @@
         padding-bottom: 40px;
     }
 
-    @include mobile{
+    @include mobile {
         display: flex;
         flex-direction: column;
     }
@@ -126,8 +126,8 @@
         border-radius: 10px;
     }
 
-    @include small-mobile{
-        min-height: 200px !important; 
+    @include small-mobile {
+        min-height: 200px !important;
     }
 }
 
@@ -137,7 +137,7 @@
     border: 2px solid #F00;
     background: #F00;
 
-    @include mobile{
+    @include mobile {
         padding-top: 57px;
         padding-left: 23px;
         padding-right: 23px;
@@ -150,10 +150,19 @@
 .swiper__examples__top__title {
     color: #FFF;
     font-size: 40px;
+    margin-top: 10px;
 
-    @include mobile{
+    @include mobile {
         font-size: 30px;
     }
+}
+
+.swiper__examples__top__title__description {
+    margin-top: 10px;
+    display: block;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .swiper__examples__top__price {
@@ -164,12 +173,12 @@
     border-radius: 5px;
     background: #FFF;
     padding: 5px 15px;
-    margin-top: 10px;
-    margin-bottom: 14px;
+    margin-top: 14px;
+    // margin-bottom: 14px;
     max-width: min-content;
     white-space: nowrap;
 
-    @include mobile{
+    @include mobile {
         white-space: normal;
         max-width: none;
         width: 100%;
@@ -183,7 +192,7 @@
     flex-direction: column;
     row-gap: 20px;
 
-    @include mobile{
+    @include mobile {
         background: #F00;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -192,7 +201,7 @@
         padding-right: 25px;
         padding-left: 25px;
 
-        & li{
+        & li {
             color: #fff;
         }
     }
